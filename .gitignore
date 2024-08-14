@@ -1,3 +1,4 @@
 Movie_Genre_Classification_RandomForest.pkl
 Processed_Data.csv
 Dataset/
+__pycache__/
