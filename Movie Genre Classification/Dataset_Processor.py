@@ -25,6 +25,8 @@ class DatasetProcessor:
             raise ValueError("Unsupported file format. Please use .txt or .csv files.")
     
     def clean_dataset(self, dataframe: pd.DataFrame) -> pd.DataFrame:
+        '''This method is used to preprocess the textual content of the dataset such as getting rid
+        of stopwords,tokenization'''
         stop_words = set(stopwords.words('english'))
 
         def clean_text(text: str) -> str:
