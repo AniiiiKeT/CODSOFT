@@ -21,7 +21,7 @@ import joblib
 # cleaned_data.to_csv('Processed_Data.csv')
 
 # Setting up the model
-cleaned_data = pd.read_csv('Processed_Data.csv')
+cleaned_data = pd.read_csv('Utils/Processed_Data.csv')
 
 # model = MultinomialNB()
 model = RandomForestClassifier()
@@ -43,7 +43,7 @@ X_test = tfidf_vectorizer.transform(X_test)
 # model.fit(X_train, y_train)
 # joblib.dump(model,'Movie_Genre_Classification_RandomForest.pkl')
 
-model = joblib.load('Movie_Genre_Classification_RandomForest.pkl')
+model = joblib.load('Utils/Movie_Genre_Classification_RandomForest.pkl')
 y_pred = model.predict(X_test)
 
 accuracy = accuracy_score(y_test,y_pred)
