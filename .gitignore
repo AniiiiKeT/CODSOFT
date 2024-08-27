@@ -1,4 +1,3 @@
-Movie_Genre_Classification_RandomForest.pkl
-Processed_Data.csv
-Dataset/
+Utils/
+Data/
 __pycache__/

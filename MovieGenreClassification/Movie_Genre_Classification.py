@@ -1,8 +1,4 @@
-import sys
-import os
-
-from Utils.Data_Preprocessor import DatasetPreprocessor
-
+from Shared.Dataset_Processor import load_dataset, clean_dataset
 
 # Library Imports
 import pandas as pd 
@@ -19,7 +15,7 @@ import os
 
 # Instantiating the dataset processor object and loading the dataset
 # processor = DatasetProcessor()
-# data = processor.load_dataset('Dataset/Genre Classification Dataset/train_data.txt')
+# data = processor.load_dataset('Data/Genre Classification Dataset/train_data.txt')
 # cleaned_data = processor.clean_dataset(data)
 
 # cleaned_data.to_csv('Processed_Data.csv')
@@ -54,7 +50,6 @@ accuracy = accuracy_score(y_test,y_pred)
 confusion_matrix = confusion_matrix(y_test,y_pred)
 
 print(accuracy)
-print(classification_report(y_test,y_pred))
 
 
 
