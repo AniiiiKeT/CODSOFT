@@ -39,7 +39,6 @@ def mnb_model(x, y, model_path=None):
         return mnbclassifier
     else:
         model = joblib.load(model_path)
-        model.fit(x, y)
         return model
 
 def rf_model(x, y, model_path=None):
@@ -50,7 +49,6 @@ def rf_model(x, y, model_path=None):
         return rfclassifier
     else:
         model = joblib.load(model_path)
-        model.fit(x, y)
         return model
     
 def lg_model(x, y, model_path=None):
@@ -61,24 +59,8 @@ def lg_model(x, y, model_path=None):
         return regressor
     else:
         model = joblib.load(model_path)
-        model.fit(x, y)
         return model
 
-def display_result(x,y):
-    labels = x.value_counts().index
-    def predict(index):    
-        label = labels[index]
-        return label
-    
-    a = [predict(label) for label in x]
-    b = [predict(label) for label in y]
-
-    result = {
-        'True Value' : a,
-        'Predicted Value' : b
-    }
-    result = pd.DataFrame(result)
-    return result
 
 if __name__ == "__main__":
 
@@ -90,10 +72,10 @@ if __name__ == "__main__":
     accuracy1 = accuracy_score(y_test, model1_pred)
     print('The accuracy of the Multinomial Naive Bayes model: ',accuracy1)
 
-    # model2 = rf_model(x_train,y_train)
-    # model2_pred = model2.predict(x_test)
-    # accuracy2 = accuracy_score(y_test, model2_pred)
-    # print('The accuracy of the Random Forest model: ',accuracy2)
+    model2 = rf_model(x_train,y_train)
+    model2_pred = model2.predict(x_test)
+    accuracy2 = accuracy_score(y_test, model2_pred)
+    print('The accuracy of the Random Forest model: ',accuracy2)
 
     model3 = lg_model(x_train,y_train)
     model3_pred = model3.predict(x_test)
