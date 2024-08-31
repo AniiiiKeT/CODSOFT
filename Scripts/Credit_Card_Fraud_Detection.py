@@ -30,16 +30,15 @@ def prepare_data(file_path: str):
     categorical_data = ['merchant','category','gender','name','street','city','state','job']
     numerical_data = ['amt','merch_lat','merch_long']
 
-    data1 = te.fit_transform(data[categorical_data], data['is_fraud'])
-    data1 = pd.DataFrame(data1, columns=categorical_data)
-    data2 = se.fit_transform(data[numerical_data])
-    data2 = pd.DataFrame(data2, columns=numerical_data)
-    new_data = pd.concat([data1,data2], axis = 1)
-    target = data['is_fraud']
-    
-    x_train, x_test, y_train, y_test = train_test_split(new_data,target, test_size = 0.3, random_state = 42)
-    
-    return x_train, x_test, y_train, y_test  
+    x_train, x_test, y_train, y_test = train_test_split(data[categorical_data + numerical_data], data['is_fraud'], test_size=0.3, random_state=42)
+    x_train_cat = te.fit_transform(x_train[categorical_data], y_train)
+    x_test_cat = te.transform(x_test[categorical_data])
+    x_train_num = se.fit_transform(x_train[numerical_data])
+    x_test_num = se.transform(x_test[numerical_data])
+    x_train_final = pd.concat([pd.DataFrame(x_train_cat, columns=categorical_data), pd.DataFrame(x_train_num, columns=numerical_data)], axis=1)
+    x_test_final = pd.concat([pd.DataFrame(x_test_cat, columns=categorical_data), pd.DataFrame(x_test_num, columns=numerical_data)], axis=1)
+        
+    return x_train_final, x_test_final, y_train, y_test  
 
 def logistic_regression_model(x, y, model_path = None):
     if model_path == None:
