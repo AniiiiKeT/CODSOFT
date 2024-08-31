@@ -12,7 +12,7 @@ class DatasetProcessor:
     def __init__(self) -> None:
         self.data = []
 
-    def load_dataset(self, file_path: str, columns = list, save = False) -> pd.DataFrame:
+    def load_dataset(self, file_path: str, columns = list, encoding = None) -> pd.DataFrame:
         if file_path.endswith('.txt'):
             if columns is not None:
                 with open(file_path, 'r', encoding='utf-8') as file:
@@ -26,8 +26,12 @@ class DatasetProcessor:
                 raise ValueError("Please provide relevant Column Names")
         
         elif file_path.endswith('.csv'):
-            dataframe = pd.read_csv(file_path)
-            return dataframe
+            if encoding == None:
+                dataframe = pd.read_csv(file_path)
+                return dataframe
+            else:
+                dataframe = pd.read_csv(file_path, encoding = encoding)
+                return dataframe
         else:
             raise ValueError("Unsupported file format. Please use .txt or .csv files.")
     
