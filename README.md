@@ -1,2 +1,2 @@
 # CODSOFT
-This repository hosts all the Machine Learning tasks I am working on as part of my internship.
+This repository contains a comprehensive collection of machine learning projects I am working on during my internship.
