@@ -65,9 +65,9 @@ def lg_model(x, y, model_path=None):
 if __name__ == "__main__":
 
     data_path = 'Data/Movie_Genre_Classification_Dataset/data.txt'
-    x_train,x_test,y_train,y_test = prepare_data(file_path = data_path, columns= ['ID', 'Title', 'Genre', 'Description'], save = True)
+    x_train,x_test,y_train,y_test = prepare_data(file_path = data_path, columns= ['ID', 'Title', 'Genre', 'Description'])
 
-    model1 = mnb_model(x_train,y_train,'Model_Assets/Movie_Genre_Classification_MNB.pkl')
+    model1 = mnb_model(x_train,y_train)
     model1_pred = model1.predict(x_test)
     accuracy1 = accuracy_score(y_test, model1_pred)
     print('The accuracy of the Multinomial Naive Bayes model: ',accuracy1)

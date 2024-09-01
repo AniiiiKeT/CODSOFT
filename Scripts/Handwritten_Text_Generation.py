@@ -92,8 +92,7 @@ def split_dataset(images, labels):
     
     train_set = prepare_dataset(train_images, train_labels)
     val_set = prepare_dataset(val_images, val_labels)
-    test_set = prepare_dataset(test_images, test_labels)
-    
+    test_set = prepare_dataset(test_images, test_labels) 
     return train_set, val_set, test_set
 
 def build_model():
@@ -137,6 +136,7 @@ def prediction_decode(pred):
         res = tf.strings.reduce_join(layer(res)).numpy().decode("utf-8")
         output_text.append(res)
     return output_text
+
 def inference(test_set, model):
     for batch in test_set.take(1):
         batch_images = batch["image"]
