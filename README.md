@@ -95,9 +95,9 @@ Welcome to my repository showcasing the machine learning projects completed duri
      git clone https://github.com/AniiiiKeT/CODSOFT.git
    
 2. **Requirements**:
-  ```
-    pip install -r requirements.txt
-  ```
+    ```
+      pip install -r requirements.txt
+    ```
 
 ## Contact
   For any questions or feedback, please reach out to:
