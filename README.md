@@ -10,8 +10,7 @@ Welcome to my repository showcasing the machine learning projects completed duri
 4. [Spam-Ham Classification](#spam-ham-classification)
 5. [Handwritten Text Generation](#handwritten-text-generation)
 6. [Getting Started](#getting-started)
-7. [Requirements](#requirements)
-8. [Contact](#contact)
+7. [Contact](#contact)
 
 ## Movie Genre Classification
 
