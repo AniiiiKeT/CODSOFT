@@ -92,7 +92,7 @@ Welcome to my repository showcasing the machine learning projects completed duri
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/AniiiiKeT/CODSOFT.git
+     git clone https://github.com/AniiiiKeT/CODSOFT.git
    
 2. **Requirements**:
   ```
