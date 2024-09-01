@@ -28,7 +28,7 @@ Welcome to my repository showcasing the machine learning projects completed duri
   - **Data**: Processed movie descriptions and genres.
   - **Preprocessing**: Text tokenization, TF-IDF vectorization.
   - **Modeling**: Implementation and comparison of MNB, Random Forest, and Logistic Regression.
-  - **Evaluation**: Accuracy, precision, recall, and F1-score metrics.
+  - **Evaluation**: Accuracy
 
 ## Credit Card Fraud Detection
 
@@ -42,7 +42,6 @@ Welcome to my repository showcasing the machine learning projects completed duri
   - **Data**: Credit card transaction data with labels for fraud detection.
   - **Preprocessing**: Data normalization, handling missing values, feature scaling.
   - **Modeling**: Implementation of various classification models, including Random Forest and Gradient Boosting.
-  - **Evaluation**: Metrics such as ROC-AUC, precision-recall curve.
 
 ## Customer Churn Prediction
 
@@ -56,7 +55,6 @@ Welcome to my repository showcasing the machine learning projects completed duri
   - **Data**: Customer data including demographics, transaction history, and churn labels.
   - **Preprocessing**: Handling categorical variables, feature scaling, and imputation of missing values.
   - **Modeling**: Implementation of models such as Logistic Regression and Random Forest.
-  - **Evaluation**: Confusion matrix, accuracy, F1-score, and ROC curve analysis.
 
 ## Spam-Ham Classification
 
