@@ -95,14 +95,15 @@ Welcome to my repository showcasing the machine learning projects completed duri
    git clone https://github.com/AniiiiKeT/CODSOFT.git
    
 2. **Requirements**:
-  ```bash
-  pip install -r requirements.txt
+  ```
+    pip install -r requirements.txt
+  ```
 
 ## Contact
   For any questions or feedback, please reach out to:
-  Name: Aniket Patil
-  Email: aniket1972003@gmail.com
-  LinkedIn: www.linkedin.com/in/aniket-patil-4b056b28b
+  - **Name**: Aniket Patil
+  - **Email**: aniket1972003@gmail.com
+  - **LinkedIn**: www.linkedin.com/in/aniket-patil-4b056b28b
 
   
 
