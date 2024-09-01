@@ -11,9 +11,7 @@ Welcome to my repository showcasing the machine learning projects completed duri
 5. [Handwritten Text Generation](#handwritten-text-generation)
 6. [Getting Started](#getting-started)
 7. [Requirements](#requirements)
-8. [License](#license)
-9. [Acknowledgements](#acknowledgements)
-10. [Contact](#contact)
+8. [Contact](#contact)
 
 ## Movie Genre Classification
 
@@ -67,7 +65,7 @@ Welcome to my repository showcasing the machine learning projects completed duri
 - **Details**:
   - **Data**: Email text data labeled as spam or ham.
   - **Preprocessing**: Text cleaning, tokenization, and vectorization using TF-IDF.
-  - **Modeling**: Application of Naive Bayes, Support Vector Machines (SVM), and Random Forest.
+  - **Modeling**: Application of Naive Bayes, Multinomical Naive Bayes, Random Forest, and Deep Learning model.
   - **Evaluation**: Precision, recall, F1-score, and confusion matrix.
 
 ## Handwritten Text Generation
@@ -95,3 +93,9 @@ Welcome to my repository showcasing the machine learning projects completed duri
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/AniiiiKeT/CODSOFT.git
+
+## Requirements
+   ```bash
+     pip install -r requirements.txt
+
+
