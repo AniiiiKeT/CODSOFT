@@ -170,7 +170,7 @@ if __name__ == '__main__':
     print(model.evaluate(test_set))
 
     prediction_model.save('Hand_Written_Text_Generation_Model.h5')
-    inference(test_set)
+    inference(test_set, prediction_model)
 
 
 
