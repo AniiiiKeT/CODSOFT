@@ -1,4 +1,4 @@
-# Machine Learning Internship Projects
+# CODSOFT Machine Learning Internship Projects
 
 Welcome to my repository showcasing the machine learning projects completed during my internship at CodSoft. This repository includes a series of tasks demonstrating various machine learning techniques and applications. Each project includes data preprocessing, model development, and performance evaluation.
 
