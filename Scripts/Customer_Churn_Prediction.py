@@ -57,7 +57,7 @@ def random_forest_model(x,y,model_path = None):
     if model_path == None: 
         model = RandomForestClassifier()
         model.fit(x,y)
-        joblib.dump(model, 'D:/CODING/CODSOFT/Model_Assets/CCP_RF.pkl')
+        joblib.dump(model,'D:/CODING/CODSOFT/Model_Assets/CCP_RF.pkl')
         return model
     else:
         model = joblib.load(model_path)

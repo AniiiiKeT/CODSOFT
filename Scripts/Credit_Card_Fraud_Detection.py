@@ -30,7 +30,7 @@ def prepare_data(file_path: str):
     categorical_data = ['merchant','category','gender','name','street','city','state','job']
     numerical_data = ['amt','merch_lat','merch_long']
 
-    x_train, x_test, y_train, y_test = train_test_split(data[categorical_data + numerical_data], data['is_fraud'], test_size=0.3, random_state=42)
+    x_train, x_test, y_train, y_test = train_test_split(data[categorical_data + numerical_data], data['is_fraud'], stratify= data['is_fraud'], test_size=0.3, random_state=42)
     x_train_cat = te.fit_transform(x_train[categorical_data], y_train)
     x_test_cat = te.transform(x_test[categorical_data])
     x_train_num = se.fit_transform(x_train[numerical_data])
@@ -44,6 +44,7 @@ def logistic_regression_model(x, y, model_path = None):
     if model_path == None:
         model = LogisticRegression(multi_class = 'auto')
         model.fit(x,y)
+        joblib.dump(model,'Model_Assets/CCFD_LG.pkl')
         return model
     else:
         model = joblib.load(model_path)
@@ -53,6 +54,7 @@ def random_forest_model(x, y, model_path = None):
     if model_path == None:
         model = RandomForestClassifier()
         model.fit(x,y)
+        joblib.dump(model,'Model_Assets/CCFD_RF.pkl')
         return model
     else:
         model = joblib.load(model_path)
@@ -67,6 +69,7 @@ def deep_learning_model(x, y, model_path = None):
         ])
         model.compile(optimizer = 'adam', metrics = ['accuracy'], loss = 'binary_crossentropy')
         model.fit(x_train,y_train, epochs = 5, batch_size = 32)
+        model.save('Model_Assets/CCFD_DL.h5')
         return model
     else:
         model = load_model(model_path)
@@ -83,10 +86,23 @@ def show_result(y_test,y_pred):
 if __name__ == '__main__':
 
     x_train, x_test, y_train, y_test = prepare_data(file_path = 'Data/Credit_Card_Fraud_Detection_Dataset/fraudTrain.csv')
-    regressor = logistic_regression_model(x_train,y_train, 'Model_Assets/CCFD_Regressor.pkl')
-    random_forest_classifier = random_forest_model(x_train,y_train, 'Model_Assets/CCFD_RandomForestCLassifier.pkl')
-    deep_learning_classifier = deep_learning_model(x_train,y_train, 'Model_Assets/CCFD_DL.h5')
-
+    regressor = logistic_regression_model(x_train,y_train)
+    random_forest_classifier = random_forest_model(x_train,y_train)
+    deep_learning_classifier = deep_learning_model(x_train,y_train)
+        
+    # Predict using the logistic regression model
     y_pred1 = regressor.predict(x_test)
+    print("Logistic Regression Results:")
+    print(show_result(y_test, y_pred1))
 
-    print(show_result(y_test,y_pred1))
+    # Predict using the random forest model
+    y_pred2 = random_forest_classifier.predict(x_test)
+    print("Random Forest Results:")
+    print(show_result(y_test, y_pred2))
+
+    # Predict using the deep learning model
+    y_pred3 = deep_learning_classifier.predict(x_test)
+    y_pred3 = (y_pred3 > 0.5).astype(int)
+    y_pred3 = y_pred3.reshape(-1)  
+    print("Deep Learning Model Results:")
+    print(show_result(y_test, y_pred3))
