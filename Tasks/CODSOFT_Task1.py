@@ -14,7 +14,6 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import MultinomialNB 
 from sklearn.metrics import accuracy_score
 
-#Loading and Preprocessing the data
 def prepare_data(file_path: str, columns: list):
     processor = DatasetProcessor()
     data = processor.load_dataset(file_path = file_path, columns = columns)

@@ -46,7 +46,6 @@ def classify_input(text : str, object):
     text = text.toarray()
     return text
 
-
 def random_forest_model(x, y, model_path = None):
     if model_path == None:
         model = RandomForestClassifier()

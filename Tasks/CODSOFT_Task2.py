@@ -30,7 +30,7 @@ def prepare_data(file_path: str):
     categorical_data = ['merchant','category','gender','name','street','city','state','job']
     numerical_data = ['amt','merch_lat','merch_long']
 
-    x_train, x_test, y_train, y_test = train_test_split(data[categorical_data + numerical_data], data['is_fraud'], stratify= data['is_fraud'], test_size=0.3, random_state=42)
+    x_train, x_test, y_train, y_test = train_test_split(data[categorical_data + numerical_data], data['is_fraud'], stratify = data['is_fraud'], test_size=0.3, random_state=42)
     x_train_cat = te.fit_transform(x_train[categorical_data], y_train)
     x_test_cat = te.transform(x_test[categorical_data])
     x_train_num = se.fit_transform(x_train[numerical_data])
